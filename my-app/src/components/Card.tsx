@@ -1,6 +1,5 @@
 import React from 'react'
 import { CardModel } from '../types/model';
-import { DocumentReference } from 'firebase/firestore/lite'
 
 interface CardProp {
     id: string,
