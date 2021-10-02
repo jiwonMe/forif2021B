@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { CardModel } from '../types/model'
 import Card from './Card'
 import CardFactory from './CardFactory'
