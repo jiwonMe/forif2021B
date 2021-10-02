@@ -24,7 +24,6 @@ const CardFactory: React.FC<CardFactoryProps> = (props) => {
 
     const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault()
-        onCreate(state)
         const contentType = parseContentType(state.content)
         const href = contentType === 'link' ? state.content : undefined
         const src = contentType === 'image' ? state.content : undefined

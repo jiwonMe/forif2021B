@@ -19,7 +19,6 @@ const CardContainer: React.FC = () => {
             })
         )
         setState(docs)
-        console.log(docs);
     }
 
     useEffect(() => {
@@ -60,9 +59,10 @@ const CardContainer: React.FC = () => {
     return (
         <div>
             {
-                state.map(doc => {
+                state.map((doc, index) => {
                     return (
                         <Card
+                            key = {index}
                             id = {doc.id}
                             data = {doc.data}
                             deleteCard = {deleteCard}
