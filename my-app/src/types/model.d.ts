@@ -1,5 +1,5 @@
+import { DocumentReference } from "@firebase/firestore/dist/lite";
 export interface CardModel {
-    id: string,
     createdDate: number,
     contentType: 'text' | 'link' | 'image',
     src?: string,

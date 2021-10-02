@@ -1,15 +1,18 @@
 import React from 'react'
 import { CardModel } from '../types/model';
+import { DocumentReference } from 'firebase/firestore/lite'
 
-interface CardProp extends CardModel{
-    deleteCard: (id:string) => void
+interface CardProp {
+    id: string,
+    data: CardModel,
+    deleteCard: (id: string) => void,
 }
 
 const Card: React.FC<CardProp> = ( props ) => {
     const date = new Date()
-    date.setTime(props.createdDate)
+    date.setTime(props.data.createdDate)
 
-    const { contentType, deleteCard } = props;
+    const { data: card, deleteCard } = props;
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
         deleteCard(props.id)
@@ -19,10 +22,10 @@ const Card: React.FC<CardProp> = ( props ) => {
         <div>
             created: {date.getTime()}<br/>
             {{
-                image: <img src={props.src} alt={props.content}></img>,
-                link: <a href={props.href}>{props.content}</a>,
-                text: props.content
-            }[contentType]}
+                image: <img src={card.src} alt={card.content}></img>,
+                link: <a href={card.href}>{card.content}</a>,
+                text: card.content
+            }[card.contentType]}
             <br/>
             <button onClick={handleClick}>delete</button>
         </div>
