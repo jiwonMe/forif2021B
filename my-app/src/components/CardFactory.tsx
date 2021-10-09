@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { CardModel } from '../types/model'
 import { nanoid } from 'nanoid'
 import { parseContentType } from '../utils/parseContentType'
+import { Form } from 'react-bootstrap'
 
 const CardFactory: React.FC<CardFactoryProps> = (props) => {
     const createCard: () => CardModel = () => ({
@@ -18,7 +19,7 @@ const CardFactory: React.FC<CardFactoryProps> = (props) => {
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
         setState({
             ...state,
-            [e.target.name]: e.target.value
+            [e.target.id]: e.target.value
         })
     }
 
@@ -39,9 +40,11 @@ const CardFactory: React.FC<CardFactoryProps> = (props) => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input name="content" type="text" value={state.content} onChange={handleChange}></input>
-            </form>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className='mb-3'>
+                    <Form.Control id="content" onChange={handleChange} value={state.content}/>
+                </Form.Group>
+            </Form>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CardModel } from '../types/model'
-import Card from './Card'
+import GenericCard from './GenericCard'
 import CardFactory from './CardFactory'
 import firebase from '../firebase'
 import { Firestore } from 'firebase/firestore/lite'
@@ -56,12 +56,17 @@ const CardContainer: React.FC = () => {
         await firebase.deleteDoc(firebase.doc(collection, id))
     }
 
+    const style = {
+        margin: 'auto',
+        width: '800px'
+    }
+
     return (
-        <div>
+        <div style={style}>
             {
-                state.map((doc, index) => {
+                state.sort((a,b) => b.data.createdDate - a.data.createdDate).map((doc, index) => {
                     return (
-                        <Card
+                        <GenericCard
                             key = {index}
                             id = {doc.id}
                             data = {doc.data}
