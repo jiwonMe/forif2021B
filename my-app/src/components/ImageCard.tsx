@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardModel } from '../types/model'
-import { Button, Card } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
 interface CardProp {
     id: string,
@@ -12,7 +12,7 @@ const ImageCard: React.FC<CardProp> = ( props ) => {
     const date = new Date()
     date.setTime(props.data.createdDate)
 
-    const { data: card, deleteCard } = props;
+    const { data: card } = props;
 
 
     return (
