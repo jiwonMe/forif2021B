@@ -48,7 +48,9 @@ const App = () =>  {
           <h1 style={{textAlign: 'left', marginBottom: '40px'}}>Scrap note</h1>
           <CardContainer></CardContainer>
         </div> :
-        <LoginButton onLogin={setAuth}/>
+        <div style={{width: '100%', margin: 'auto', textAlign: 'center'}}>
+          <LoginButton onLogin={setAuth}/>
+        </div>
       }
     </div>
   );
