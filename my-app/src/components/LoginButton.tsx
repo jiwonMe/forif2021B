@@ -1,6 +1,6 @@
 import type { User } from 'firebase/auth';
 import React from 'react'
-import { googleLogin } from '../utils/googleAuthentification'
+import { googleLogin } from '../utils/googleAuthentication'
 import { Button } from 'react-bootstrap';
 
 const LoginButton = ({ onLogin }: { onLogin: ({ token, user }: {token: string | null, user: User | null }) => void}) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import { googleLogout } from '../utils/googleAuthentification'
+import { googleLogout } from '../utils/googleAuthentication'
 
 const LogoutButton = ({ onLogout }: { onLogout: () => void}) => {
 
