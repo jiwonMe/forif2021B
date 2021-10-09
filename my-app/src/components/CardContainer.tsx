@@ -4,6 +4,7 @@ import GenericCard from './GenericCard'
 import CardFactory from './CardFactory'
 import firebase from '../firebase'
 import { Firestore } from 'firebase/firestore/lite'
+import { Row } from 'react-bootstrap'
 
 const CardContainer: React.FC = () => {
     const [state, setState] = useState<{ data: CardModel, id: string }[]>([])
@@ -58,24 +59,28 @@ const CardContainer: React.FC = () => {
 
     const style = {
         margin: 'auto',
-        width: '800px'
+        width: '800px',
     }
 
     return (
         <div style={style}>
+        <CardFactory onCreate={createCard}></CardFactory>
+
             {
                 state.sort((a,b) => b.data.createdDate - a.data.createdDate).map((doc, index) => {
                     return (
+                        <div>
                         <GenericCard
                             key = {index}
                             id = {doc.id}
                             data = {doc.data}
                             deleteCard = {deleteCard}
                         />
+                        <br/>
+                        </div>
                     )
                 })
             }
-            <CardFactory onCreate={createCard}></CardFactory>
         </div>
     )
 }

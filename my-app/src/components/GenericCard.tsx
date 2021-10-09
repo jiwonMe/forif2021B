@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, CloseButton } from 'react-bootstrap'
 import { CardModel } from '../types/model'
 import ImageCard from './ImageCard'
 import LinkCard from './LinkCard'
@@ -21,14 +21,19 @@ const GenericCard: React.FC<CardProp> = (props) => {
         deleteCard(props.id)
     }
 
+    const style = {
+        position: 'absolute',
+        width: 200,
+        marginRight: 0,
+    }
     return (
-        <div>
+        <div style={{position: 'relative'}}>
+            <div style={{position: 'absolute', right: '5px', zIndex: 2}}><CloseButton  onClick={handleClick}/></div>
         {{
             link: <LinkCard {...props}/>,
             image: <ImageCard {...props}/>,
             text: <TextCard {...props}/>,
         }[card.contentType]}
-        <Button variant='danger' onClick={handleClick}>delete</Button>
 
         </div>
 

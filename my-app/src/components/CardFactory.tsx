@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CardModel } from '../types/model'
 import { nanoid } from 'nanoid'
 import { parseContentType } from '../utils/parseContentType'
-import { Form } from 'react-bootstrap'
+import { Col, Form, Row } from 'react-bootstrap'
 
 const CardFactory: React.FC<CardFactoryProps> = (props) => {
     const createCard: () => CardModel = () => ({
@@ -39,13 +39,14 @@ const CardFactory: React.FC<CardFactoryProps> = (props) => {
     }
 
     return (
-        <div>
             <Form onSubmit={handleSubmit}>
-                <Form.Group className='mb-3'>
+                <Form.Group as={Row} className='mb-3'>
+                    <Form.Label column sm='2'>content</Form.Label>
+                    <Col sm='10'>
                     <Form.Control id="content" onChange={handleChange} value={state.content}/>
+                    </Col>
                 </Form.Group>
             </Form>
-        </div>
     )
 }
 

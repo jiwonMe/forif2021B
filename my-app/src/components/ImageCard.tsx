@@ -23,7 +23,6 @@ const ImageCard: React.FC<CardProp> = ( props ) => {
                         created at {date.getTime()}
                     </Card.Footer>
             </Card>
-            <br/>
         </div>
     )
 }

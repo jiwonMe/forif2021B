@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CardContainer from './components/CardContainer';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
+import { Image } from 'react-bootstrap'
 
 const App = () =>  {
   
@@ -32,17 +33,19 @@ const App = () =>  {
   }
 
   return (
-    <div className="App">
+    <div style={{width: '800px', margin: 'auto'}} className="App">
       {
         state.isLogged ? 
         <div>
-          <img src={state?.user?.photoURL ?? ''} alt='profile'></img>
-          <div>user: {state?.user?.displayName}</div>
+          <div style={{marginTop: '40px', textAlign: 'right'}}>
+          <Image roundedCircle src={state?.user?.photoURL ?? ''} alt='profile' width='40px'></Image>
+          <span style={{marginLeft: '10px', marginRight: '10px'}}>{state?.user?.displayName}</span>
           <LogoutButton onLogout={() => setAuth({
           token: null,
           user: null,
         })}/>
-          <h1>Scrap note</h1>
+          </div>
+          <h1 style={{textAlign: 'left', marginBottom: '40px'}}>Scrap note</h1>
           <CardContainer></CardContainer>
         </div> :
         <LoginButton onLogin={setAuth}/>
