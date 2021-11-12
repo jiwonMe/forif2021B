@@ -1,0 +1,5 @@
+import React from 'react';
+import CardFactory from './CardFactory';
+import { render } from '@testing-library/react';
+import { CardModel } from '../types/model';
+

@@ -24,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "jest": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,8 +46,18 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@babel/runtime": "^7.16.0",
+    "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "jest": "^27.3.1",
+    "jest-environment-jsdom": "^27.3.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }

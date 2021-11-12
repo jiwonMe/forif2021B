@@ -1,0 +1,13 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import ImageCard from './ImageCard';
+import type { CardModel } from '../types/model';
+
+describe('ImageCard test', () => {
+    const data: CardModel = {
+        content: 'https://'
+    }
+    const component = render(
+        <ImageCard deleteCard={jest.fn()} data={}></ImageCard>
+    )
+})

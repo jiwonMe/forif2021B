@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows the props correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="card"
+    >
+      <img
+        class="card-img-top"
+        src=""
+      />
+      <div
+        class="card-body"
+      >
+        <a
+          class="card-link"
+          href="https://sketchsoft3d.com/"
+        >
+          hello
+        </a>
+      </div>
+      <div
+        class="text-muted card-footer"
+      >
+        created at 
+        1482363367071
+      </div>
+    </div>
+  </div>
+</div>
+`;
